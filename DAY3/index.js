@@ -167,11 +167,25 @@ console.log(y_number8)
 
 // let hour = Number(prompt('Enter hours', '40'))
 // let rate = parseFloat(prompt('Enter rate per hour', '28'))
-let weeklyEarning = hour * rate
-console.log(`Your weekly earning is  ${weeklyEarning}`)
+// let weeklyEarning = hour * rate
+// console.log(`Your weekly earning is  ${weeklyEarning}`)
 
 // 10. If the length of your name is greater than 7 say, your name is long else say your name is short.
 let myName = 'Mustapha'
+let lengthOfName = myName.length
+lengthOfName > 7 ? console.log('your name is long') : console.log('your name is short')
+//  11. Compare your first name length and your family name length and you should get this output.
+let first_name = myName
+let last_name = 'Ahmad'
+if(first_name.length > last_name.length){
+    console.log(`My first name, ${myName} is longer than your family name, ${last_name}`)
+}
+// 12. Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
+let myAge = 250
+let yourAge = 25
+let diff = myAge - yourAge
+console.log(`I am ${diff} years older than you`)
+
 
 
 
