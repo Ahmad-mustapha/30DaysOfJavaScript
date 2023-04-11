@@ -193,14 +193,22 @@ console.log(`I am ${diff} years older than you`)
 
 // Enter birth year: 2005
 // You are 15. You will be allowed to drive after 3 years.
-const birthYear = Number(prompt('Enter birth year'))
-if (birthYear >= 18){
-    console.log(`you are ${birthYear} you are old enough to dirve`)
-}
-else{
-    console.log(`you are ${birthYear} you will be allowed to drive after ${18 - birthYear} years`)
-}
+// const birthYear = Number(prompt('Enter birth year'))
+// if (birthYear >= 18){
+//     console.log(`you are ${birthYear} you are old enough to dirve`)
+// }
+// else{
+//     console.log(`you are ${birthYear} you will be allowed to drive after ${18 - birthYear} years`)
+// }
 
+// 14. Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
+
+// Enter number of years you live: 100
+// You lived 3153600000 seconds.
+
+const numberOfYears = Number(prompt('Enter number of year you live'))
+const now = new Date()
+console.log(now.getTime())
 
 
 
