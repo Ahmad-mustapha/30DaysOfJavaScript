@@ -157,4 +157,61 @@
 // February has 28 days.
 // let input = prompt('Enter a month')
 
+// let month = prompt('Enter a month')
+// let month1 = month.substring(0,1).toUpperCase() + month.substr(1).toLowerCase()
+// const day1 = 30
+// const day2 = 31
+// const day3 = 28 
+// switch(month1){
+//     case 'January':
+//     case 'March':
+//     case 'May':
+//     case 'July':
+//     case 'August':    
+//     case 'October':
+//     case 'December':
+//         console.log(`${month1} has ${day2} days`)
+//         break
+//     case 'September':
+//     case 'April':
+//     case 'June': 
+//     case 'November':
+//         console.log(`${month1} has ${day1} days`)
+//         break
+//     case 'February':
+//         console.log(`${month1} has ${day3} days`);
+//         break
+//     default:
+//         console.log('I dont knw');
+// }
+
+//2. Write a program which tells the number of days in a month, now consider leap year.
+
+let month = prompt('Enter a month')
+let month2 = month.substring(0,1).toUpperCase() + month.substr(1).toLowerCase()
+const days1 = 30
+const days2 = 31
+const days3 = 29 
+switch(month2){
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':    
+    case 'October':
+    case 'December':
+        console.log(`${month2} has ${days2} days`)
+        break
+    case 'September':
+    case 'April':
+    case 'June': 
+    case 'November':
+        console.log(`${month2} has ${days1} days`)
+        break
+    case 'February':
+        console.log(`${month2} has ${days3} days`);
+        break
+    default:
+        console.log('I dont knw');
+}
 
