@@ -90,16 +90,71 @@
 // March, April or May, the season is Spring
 // June, July or August, the season is Summer
 
-let season = prompt('Enter season')
-if(season === 'September' || 'October' || 'November'){
-    console.log(`The season is Autumn`)
-}
-else if(season === 'December' || 'January' || 'February'){
-    console.log(`The season is Winter`)
-}
-else if(season === 'March' || 'April' || 'May'){
-    console.log(`The season is Spring`)
-}
-else if(season === 'June' || 'July' || 'August'){
-    console.log(`The season is Summer`)
-}
+// let season1 = prompt('Enter season')
+// let season = season1.substring(0,1).toUpperCase()+season1.substr(1).toLowerCase()
+// if(season === 'September' || season ==='October' || season === 'November'){
+//     console.log(`The season is Autumn`)
+// }
+// else if(season === 'December' || season === 'January' || season === 'February'){
+//     console.log(`The season is Winter`)
+// }
+// else if(season === 'March' || season === 'April' || season === 'May'){
+//     console.log(`The season is Spring`)
+// }
+// else if(season === 'June' || season === 'July' || season === 'August'){
+//     console.log(`The season is Summer`)
+// }
+// else{
+//     console.log('You entered a wrong month')
+// }
+
+// 3. Check if a day is weekend day or a working day. Your script will take day as an input.
+// What is the day  today? Saturday
+// Saturday is a weekend.
+
+// What is the day today? saturDaY
+// Saturday is a weekend.
+
+// What is the day today? Friday
+// Friday is a working day.
+
+// What is the day today? FrIDAy
+// Friday is a working day.
+// let practSubs = 'mustyBeneh'
+
+// console.log(practSubs.substring(0,4));
+// console.log(practSubs.substring(5, 8));
+// for substring, the first value is for index and the second value is lenght
+// console.log(practSubs.substr(5,4)); 
+// for substr, the first value is for index (which starts from 0,1,2...) and the second value is for the number of characters we wanna cut out
+
+
+// let weekend = prompt('what is the day today?')
+// let day = weekend.substring(0,1).toUpperCase() + weekend.substr(1).toLowerCase()
+// switch(day){
+//     case 'Saturday':
+//     case 'Sunday':
+//         console.log('Saturday is a weekend')
+//         console.log('Sunday is a weekend')
+//         break;
+//     default:
+//         console.log(`${day} a working day`)      
+// }
+
+// EXERCISE: LEVEL 3
+
+// 1. Write a program which tells the number of days in a month.
+// Enter a month: January
+// January has 31 days.
+
+// Enter a month: JANUARY
+// January has 31 day
+
+// Enter a month: February
+// February has 28 days.
+
+// Enter a month: FEbruary
+// February has 28 days.
+// let input = prompt('Enter a month')
+
+
