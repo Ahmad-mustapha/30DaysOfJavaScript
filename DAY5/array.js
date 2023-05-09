@@ -38,5 +38,10 @@ const num = [1, 2, 3, 4, 5, 6, 7, 8]
 console.log(num.slice(0, 6))
 
 
+// 6. Concatenate the following two variables and store it in a fullStack variable.
 
 
+const frontEndExercise = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const backEndExercise = ['Node','Express', 'MongoDB']
+let fullStackExercise = frontEndExercise.concat(backEndExercise)
+console.log(fullStackExercise);
