@@ -176,24 +176,30 @@ Finally, we log the value of personWithMaxSkills to the console.
 By using Object.entries() with a for...of loop, we can iterate over the properties of the users object and find the person who has the most skills.
  */
 
-
+let whoLoggonIn = []
 for(const [user, usersdetails] of Object.entries(users)){
   let loggedIn = usersdetails.isLoggedIn
   // sum = 0
   loggedIn === true
   if(loggedIn){
-    Object.loggedIn
+    whoLoggonIn.push(user)
+  }else{
+    `None is logged in`
   }
-console.log(loggedIn)
 }
-let userPoint = ''
-for(const [user, userDetails] of Object.keys(users)){
-  let points = userDetails.points
-  if(points >= 50){
-    userPoint = user
-  }
-  console.log(userPoint)
+console.log(whoLoggonIn)
+
+
+let aboveFifty = []
+for(const [user, userDetails] of Object.entries(users)){
+let points = userDetails.points
+if(points >= 50){
+  aboveFifty.push(user)
+}else{
+  `None is above 50`
 }
+}
+console.log(aboveFifty)
 
 // 3. Find people who are MERN stack developer from the users object
 
@@ -214,8 +220,191 @@ console.log('MERN stack developers:', mernStackDevelopers);
 
 // 4. Set your name in the users object without modifying the original users object
 
-const fakeUserObject = Object.assign({}, users)
-for([user, userDetails] of Object.entries(users){
-  let myName = user.Alex
-})
-console.log(fakeUserObject)
+const newUser = Object.assign({}, users, {Mustapha : {}})
+// let myName = []
+// for(const [user, userDetails] of Object.entries(users)){
+//   myName.push(newUser)
+// }
+console.log(newUser)
+
+
+
+// let an = 'Love is the best thing in this world. Some found their love and some are still looking for their love';
+// const arr = an.split(' ')
+// console.log(arr)
+// let loves =[]
+// for(const a of arr){
+//   if(a.toLowerCase().includes('love')){
+//    loves.push(a)
+//   }
+//   // loves.push(a.toUpperCase())
+// }
+
+// console.log(loves)
+
+
+// 5. Get all keys or properties of users object
+
+for (const u in users) {
+  console.log(u)
+}
+
+
+// 6. Get all the values of users object
+
+let allValues = []
+for(const details of Object.values(users)){
+  allValues.push(details)
+}
+console.log(allValues)
+
+// 7. // 7.Use the countries object to print a country name, capital, populations and languages.
+
+
+
+
+// EXERCISE : LEVEL 3
+
+
+// 1. Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
+
+const personAccount = {
+  firstNmae : 'Mustapha',
+  lastNmae : 'Ahmad',
+  accountInfo : function() {
+    return `I am ${this.firstNmae} ${this.lastNmae}`
+  },
+  incomes : [400, 800, 1200, 1600, 2000],
+  totalIncome : function(){
+    let addIncome = 0
+    for(let i = 0; i < personAccount.incomes.length; i++){
+       addIncome += personAccount.incomes[i]
+    }
+    return addIncome
+    
+  },
+  expenses : [200, 500, 100, 1000],
+  totalExpense : function(){
+    let addExpense = 0
+    for(let i = 0; i < this.expenses.length; i++){
+       addExpense += this.expenses[i]
+    }
+    return addExpense
+  },
+  accountBalance  : function(){
+    return this.totalIncome() - this.totalExpense()
+  }
+}
+console.log(personAccount)
+console.log(`My name is ${personAccount.accountInfo()} \nI earn $${personAccount.totalIncome()} in a month. \nI spend ${personAccount.totalExpense()} in a month roughly \nAnd I have ${personAccount.accountBalance()} left in my bank account`)
+console.log(personAccount.totalIncome())
+
+
+// 2. **** Questions:2, 3 and 4 are based on the following two arrays:users and products ()
+
+const users1 = [
+  {
+      _id: 'ab12ex',
+      username: 'Alex',
+      email: 'alex@alex.com',
+      password: '123123',
+      createdAt:'08/01/2020 9:00 AM',
+      isLoggedIn: false
+  },
+  {
+      _id: 'fg12cy',
+      username: 'Asab',
+      email: 'asab@asab.com',
+      password: '123456',
+      createdAt:'08/01/2020 9:30 AM',
+      isLoggedIn: true
+  },
+  {
+      _id: 'zwf8md',
+      username: 'Brook',
+      email: 'brook@brook.com',
+      password: '123111',
+      createdAt:'08/01/2020 9:45 AM',
+      isLoggedIn: true
+  },
+  {
+      _id: 'eefamr',
+      username: 'Martha',
+      email: 'martha@martha.com',
+      password: '123222',
+      createdAt:'08/01/2020 9:50 AM',
+      isLoggedIn: false
+  },
+  {
+      _id: 'ghderc',
+      username: 'Thomas',
+      email: 'thomas@thomas.com',
+      password: '123333',
+      createdAt:'08/01/2020 10:00 AM',
+      isLoggedIn: false
+  }
+  ];
+
+  const products = [
+{
+  _id: 'eedfcf',
+  name: 'mobile phone',
+  description: 'Huawei Honor',
+  price: 200,
+  ratings: [
+    { userId: 'fg12cy', rate: 5 },
+    { userId: 'zwf8md', rate: 4.5 }
+  ],
+  likes: []
+},
+{
+  _id: 'aegfal',
+  name: 'Laptop',
+  description: 'MacPro: System Darwin',
+  price: 2500,
+  ratings: [],
+  likes: ['fg12cy']
+},
+{
+  _id: 'hedfcg',
+  name: 'TV',
+  description: 'Smart TV:Procaster',
+  price: 400,
+  ratings: [{ userId: 'fg12cy', rate: 5 }],
+  likes: ['fg12cy']
+}
+]
+
+// Imagine you are getting the above users collection from a MongoDB database.
+//  a. Create a function called signUp which allows user to add to the collection.
+//  If user exists, inform the user that he has already an account.
+
+function signUp(){
+  for(let i = 0; i < users1.length; i++){
+    let present1 = users1[i].username.toLowerCase().includes('alex')
+    let present2 = users1[i].username.toLowerCase().includes('asab')
+    let present3 = users1[i].username.toLowerCase().includes('brook')
+    let present4 = users1[i].username.toLowerCase().includes('martha')
+    let present5 = users1[i].username.toLowerCase().includes('thomas')
+
+    if(present1 || present2 || present3 || present4 || present5){
+      console.log('treuuuu')
+    }else{
+      console.log('You need to sign in')
+    }
+  }
+}
+signUp()
+
+// b. Create a function called signIn which allows user to sign in to the application
+
+// function signIn(user, password){
+//   let promptUseer = prompt('Enter your name')
+//   let promptpasword = prompt('Enter password')
+//   if(promptUseer === 'Bene' && promptpasword === 'Musben12'){
+//     console.log('You welcome')
+//   }else{
+//     console.log('Wrong password, please try again!')
+//   }
+// }
+// signIn()
