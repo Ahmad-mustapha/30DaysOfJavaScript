@@ -2674,7 +2674,7 @@ const stantistics = {
         const mean = ages.reduce((acc, ini) =>{
           return acc = acc + ini / ages.length
         }, 0)
-        return Math.round(mean)
+        return (mean)
     },
     Median : function(){
         if(ages.length === 0){
@@ -2710,13 +2710,20 @@ const stantistics = {
           return `mode: ${modes}, count : ${maxFrequency}`;
         },
     Variance : function(){
-        const variance = ages.map((n) => n - this.Mean)
-        const varianceSq = variance.map((n) => n ** 2)
-        let sumSq = 0;
-        const sumVarianceSq = varianceSq.forEach((s) => sumSq += s)
-        return  sumSq / ages.length
+        const v = ages.map((nums) =>{
+            return nums
+        })
+        const vSum = v.reduce((acc, ini) =>{
+           return ini - acc
+        }, this.Mean())
+        return vSum ** 2
+    },
+    StandardDeviation : function(){
+        return Math.sqrt(this.Variance())
     }
-    
+    // frequencyDistribution : function(){
+
+    // }
 }
 
 console.log(stantistics.Count())
@@ -2728,7 +2735,7 @@ console.log(stantistics.Mean())
 console.log(stantistics.Median())
 console.log(stantistics.Mode())
 console.log(stantistics.Variance())
-
+console.log(stantistics.StandardDeviation())
 
 
 
