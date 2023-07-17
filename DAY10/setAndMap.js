@@ -122,7 +122,7 @@ let D = new Set(d)
 let E = new Set(e)
 
 let f = d.filter((num) =>{
-   return B.has(num)
+   return E.has(num)
 })
 let F = new Set(f)
 console.log(f)

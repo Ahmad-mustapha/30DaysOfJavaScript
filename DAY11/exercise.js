@@ -1,90 +1,97 @@
-// Exercises:Level 1
+// Exercises: Level 1
 
-const a = [4, 5, 8, 9]
-const b = [3, 4, 5, 7]
-const countries = ['Finland', 'Sweden', 'Norway']
-const countriesSet = new Set(countries)
-
-// 1. create an empty set
-
-const emptySet = new Set()
-console.log(emptySet)
-
-// 2. Create a set containing 0 to 10 using loop
-
-const s = []
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-for(let i = 0; i <= numbers.length; i++){
-    s.push(i)
+const constants = [2.72, 3.14, 9.81, 37, 100]
+const countries = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
+const rectangle = {
+  width: 20,
+  height: 10,
+  area: 200,
+  perimeter: 60
 }
-const newSet = new Set(s)
-console.log(newSet)
-
-// 3. Remove an element from a set
-const del = countriesSet.delete('Finland')
-console.log(countriesSet)
-
-// 4. Clear a set
-
-const clr = countriesSet.clear()
-console.log(countriesSet)
-
-// 5. Create a set of 5 string elements from array
- const arr = ['pen', 'ruler', 'eraser', 'pencil', 'blade']
- const newarrSet = new Set(arr)
- console.log(newarrSet)
-
-//  6. Create a map of countries and number of characters of a country
-
-const countries2 = [
-    ['Finland', 'Helsinki'],
-    ['Sweden', 'Stockholm'],
-    ['Norway', 'Oslo'],
-  ]
-const mapOfCountries2 = new Map(countries2)
-console.log(mapOfCountries2)
-
-const empty = []
-for(const [x, y] of countries2){
-    empty.push(x, y)
+const users = [
+{
+  name:'Brook',
+  scores:75,
+  skills:['HTM', 'CSS', 'JS'],
+  age:16
+},
+{
+  name:'Alex',
+  scores:80,
+  skills:['HTM', 'CSS', 'JS'],
+  age:18
+},
+{
+  name:'David',
+  scores:75,
+  skills:['HTM', 'CSS'],
+  age:22
+},
+{
+  name:'John',
+  scores:85,
+  skills:['HTML'],
+  age:25
+},
+{
+  name:'Sara',
+  scores:95,
+  skills:['HTM', 'CSS', 'JS'],
+  age: 26
+},
+{
+  name:'Martha',
+  scores:80,
+  skills:['HTM', 'CSS', 'JS'],
+  age:18
+},
+{
+  name:'Thomas',
+  scores:90,
+  skills:['HTM', 'CSS', 'JS'],
+  age:20
 }
-console.log(empty.length)
+]
 
-const chars = mapOfCountries2.get('Finland')
-console.log(chars.length)
+//1. Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.
 
+let [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants
+console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp)
 
-// Exercises:Level 2
+// 2. Destructure and assign the elements of countries array to fin, est, sw, den, nor
 
-// 1. Find a union b
+let [fin, est, sw, den, nor] = countries
+console.log(fin, est, sw, den, nor)
 
-const union = [...a, ...b]
-const setUnion = new Set(union)
-console.log(setUnion)
+// 3. Destructure the rectangle object by its properties or keys.
 
-
-// 2. Find a intersection b
-
-const aSet = new Set(a)
-const bSet = new Set(b)
-
-const intersection = a.filter((num) =>{
-    return bSet.has(num)
-})
-console.log(intersection)
+let {width, height, area, perimeter} = rectangle
+console.log(width, height, area, perimeter)
 
 
-// 3. Find a with b
 
-const difference = a.filter((num) =>{
-    return !bSet.has(num)
-})
-console.log(difference)
+// Exercises: Level 2
 
+//1. Iterate through the users array and get all the keys of the object using destructuring
 
-// Exercises:Level 3
+for(const {name, scores, skills, age} of users){
+    console.log(name)
+}
 
-// 1. How many languages are there in the countries object file.
+//2. Find the persons who have less than two skills
+
+let empty = []
+for(const {name, scores, skills, age} of users){
+    if(skills.length < 2){
+        empty.push(name)
+    }
+}
+console.log(empty)
+
+// Exercises: Level 3
+
+//1. Destructure the countries object print name, capital, population and languages of all countries
+
 
 const countriesAllAndData = [
     {
@@ -2100,20 +2107,19 @@ const countriesAllAndData = [
     }
 ]
 
-const langSet = new Set(countriesAllAndData)
-console.log(langSet)
+for(const {name, capital, population, languages} of countriesAllAndData){
+    console.log(name, capital, population, languages)
+    
+}
 
-let counting = []
-let sumx = 0
-const ben = langSet.map((n) => {
-    for (const b of n.languages) {
-        const filterSame = languages.filter((lan) => lan === b)
-        sumx += filterSame.length
-        counting.push({ lang: b, counts: filterSame.length })
-    }
-    return ben
-})
-console.log(sumx)
-console.log(counting)
-console.log(ben)
+// 2. A junior developer structure student name, skills and score in array of arrays which may not easy to read. Destructure the following array name to name, skills array to skills, scores array to scores, JavaScript score to jsScore and React score to reactScore variable in one line.
 
+const student = ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]]
+
+const [name, skills, [,,jsScore, reactScore]] = student;
+
+console.log(name);        // Output: 'David'
+console.log(skills);      // Output: ['HTM', 'CSS', 'JS', 'React']
+console.log(jsScore);     // Output: 90
+console.log(reactScore);  // Output: 95
+console.log(name, skills, jsScore, reactScore)
