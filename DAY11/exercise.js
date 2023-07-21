@@ -2123,3 +2123,49 @@ console.log(skills);      // Output: ['HTM', 'CSS', 'JS', 'React']
 console.log(jsScore);     // Output: 90
 console.log(reactScore);  // Output: 95
 console.log(name, skills, jsScore, reactScore)
+
+// 3. Write a function called convertArrayToObject which can convert the array to a structure object.
+
+const students = [
+    ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]],
+    ['John', ['HTM', 'CSS', 'JS', 'React'], [85, 80, 85, 80]]
+  ]
+
+// console.log(convertArrayToObject(students))
+[
+  {
+    name: 'David',
+    skills: ['HTM','CSS','JS','React'],
+    scores: [98,85,90,95]
+  },
+  {
+    name: 'John',
+    skills: ['HTM','CSS','JS','React'],
+    scores: [85, 80,85,80]
+  }
+]
+
+const convertArrayToObject = (object) =>{
+    const x1 = object[0][0]
+    const x2 = object[0][1]
+    const x3 = object[0][2]
+    const x4 = object[1][0]
+    const x5 = object[1][1]
+    const x6 = object[1][2]
+    return (
+        [
+            {
+                name: x1,
+                skills: x2,
+                scores: x3,
+            },
+            {
+                name: x4,
+                skills: x5,
+                scores: x6 
+            }
+        ]
+    )
+    
+}
+console.log(convertArrayToObject(students))
