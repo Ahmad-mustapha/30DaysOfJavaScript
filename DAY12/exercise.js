@@ -192,3 +192,17 @@ const cleanSentence = (a) =>{
 }
 
 console.log(cleanSentence(sentence))
+
+
+/**
+ * 
+ *  I am a teacher and I love teaching There is nothing as more rewarding as educating and empowering people I found teaching more interesting than any other jobs Does this motivate you to be a teacher
+ ```
+2. Write a function which find the most frequent words. After cleaning, count three most frequent words in the string.
+
+```js
+ console.log(mostFrequentWords(cleanedText))
+ [{word:'I', count:3}, {word:'teaching', count:2}, {word:'teacher', count:2}]
+ */
+
+const txt = ' I am a teacher and I love teaching There is nothing as more rewarding as educating and empowering people I found teaching more interesting than any other jobs Does this motivate you to be a teacher'
