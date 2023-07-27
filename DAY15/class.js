@@ -254,3 +254,29 @@ console.log(person20.getPersonInfo())
 console.log(person30.getPersonInfo())
 console.log(PersonInfo.favoriteSkill())
 console.log(PersonInfo.showDateTime())
+
+
+/**
+ * Inheritance
+Using inheritance we can access all the properties and the methods of the parent class.
+ This reduces repetition of code. If you remember, we have a Person parent class and we will create children from it.
+ Our children class could be student, teach etc.
+ */
+
+//  // syntax
+// class ChildClassName extends {
+//   // code goes here
+//  }
+
+class Student extends PersonGetter{
+  saySomething(){
+    console.log('I am a child of the person class')
+  }
+}
+
+const s1 = new Student('Asabeneh', 'Yetayeh', 'Finland', 250, 'Helsinki')
+console.log(s1)
+console.log(s1.saySomething())
+console.log(s1.getFullName())
+// console.log(s1.getPersonInfo())
+
