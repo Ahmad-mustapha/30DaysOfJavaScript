@@ -3,6 +3,8 @@
 Exercises Level 1
 Create an Animal class. The class will have name, age, color, legs properties and create different methods
 Create a Dog and Cat child class from the Animal Class.
+Exercises Level 2
+Override the method you create in Animal class
  */
 
 class animal {
@@ -63,3 +65,31 @@ class Cat extends animal{
 }
 const c = new Cat('Muna', 20, 'brown', 'He')
 console.log(c.getCatInfo())
+
+
+// Let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
+
+class centralTendency {
+    constructor(count, sum, min, max, range, mean, median, mode){
+        this.count = count
+        this.sum = sum
+        this.min = min
+        this.max = max
+        this.range = range
+        this.mean = mean
+        this.median = median
+        this.mode = mode
+    }
+    getCount(){
+        return this.count.length
+    }
+    getsum(arr){
+        return arr.reduce((acc, ini) =>{
+            return acc + ini
+        }, 0)
+        // return sum
+    }
+}
+const measureOfCenTend = new centralTendency([31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26])
+console.log('count: ' + measureOfCenTend.getCount())
+console.log('Sum: ' + measureOfCenTend.getsum())
