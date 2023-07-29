@@ -69,6 +69,7 @@ console.log(c.getCatInfo())
 
 // Let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
 
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
 class centralTendency {
     constructor(count, sum, min, max, range, mean, median, mode){
         this.count = count
@@ -89,7 +90,42 @@ class centralTendency {
         }, 0)
         // return sum
     }
+    getMin(arr){
+        return Math.min(...ages)
+        // OR
+        // return Math.min(...arr)
+    }
+    getMax(arr){
+        return Math.max(...arr)
+    }
+    getRange(){
+        let sort = ages.sort((a, b) =>{
+            return a - b
+        })
+        return (Math.max(...sort) - Math.min(...sort))
+    }
+    getMean(arr){
+        return Math.ceil(this.getsum(arr) / this.getCount())
+    }
+    getMedian(arr){
+        
+    }
 }
 const measureOfCenTend = new centralTendency([31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26])
 console.log('count: ' + measureOfCenTend.getCount())
-console.log('Sum: ' + measureOfCenTend.getsum())
+
+console.log('Sum: ' + measureOfCenTend.getsum(ages))
+
+console.log('Min: ' + measureOfCenTend.getMin(ages))
+
+console.log('Max: ' + measureOfCenTend.getMax(ages))
+
+console.log('Range: ' + measureOfCenTend.getRange())
+
+console.log('Mean: ' + measureOfCenTend.getMean(ages))
+
+console.log('Median: ' + measureOfCenTend.getMedian(ages))
+
+
+
+
