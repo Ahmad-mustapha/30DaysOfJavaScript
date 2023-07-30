@@ -108,7 +108,45 @@ class centralTendency {
         return Math.ceil(this.getsum(arr) / this.getCount())
     }
     getMedian(arr){
-        
+        let sortMedian = ages.sort((a, b) =>{
+            return a - b
+        })
+        let mid = Math.floor(sortMedian.length / 2)
+        if(sortMedian.length % 2 === 0){
+            return (sortMedian[mid - 1] + sortMedian[mid]) / 2
+        }else{
+            return sortMedian[mid]
+        }
+    }
+    getMode(array){
+        const frequencyMap = {}
+        array.forEach(num => {
+            frequencyMap[num] = (frequencyMap[num] || 0) + 1
+        });
+        let maxFrequency = 0
+        let modes = []
+        for(const num in frequencyMap){
+            if(frequencyMap[num] > maxFrequency){
+                maxFrequency = frequencyMap[num]
+                modes = [num]
+            }else if(frequencyMap[num] === maxFrequency){
+                modes.push(num)
+            }
+        }
+        if(modes.length === Object.keys(frequencyMap).length){
+            return 'No mode'
+        }
+        return {mode: modes, count: maxFrequency}
+    }
+    getVariance(array){
+        const mean = this.getMean(array)
+        const squaredDiff = array.map((num) =>{
+            return (num - mean) **2
+        })
+        return this.getMean(squaredDiff)
+    }
+    getStandardDeviation(array){
+        return Math.sqrt(this.getVariance(array))
     }
 }
 const measureOfCenTend = new centralTendency([31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26])
@@ -125,6 +163,16 @@ console.log('Range: ' + measureOfCenTend.getRange())
 console.log('Mean: ' + measureOfCenTend.getMean(ages))
 
 console.log('Median: ' + measureOfCenTend.getMedian(ages))
+
+console.log('Mode: ' + measureOfCenTend.getMode(ages))
+
+console.log('Variance: ' + measureOfCenTend.getVariance(ages))
+
+console.log('Standard Deviation: ' + measureOfCenTend.getStandardDeviastion(ages))
+
+
+
+
 
 
 
