@@ -143,3 +143,25 @@ Find the user who has many skills from the variable stored in txt.
 // 1. 
 const toObject = JSON.parse(txt, undefined, 3)
 console.log(toObject)
+
+// 2.
+ const array = [
+    toObject.Alex.skills,
+    toObject.Asab.skills,
+    toObject.Brook.skills,
+    toObject.Daniel.skills,
+    toObject.John.skills,
+    toObject.Thomas.skills,
+    toObject.Paul.skills
+]
+let arr = []
+for(const i of array){
+    arr.push(i.length)
+}
+
+let maxSkills = Math.max(...arr)
+for(const i of array){
+    if(maxSkills === i.length){
+        console.log(i, i.length)
+    }
+}
