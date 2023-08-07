@@ -1,20 +1,15 @@
 // In this case the err has a value and it will return the err block.
-const doSomething = callback =>{
-    setTimeout(() =>{
-        const skills = ['HTML', 'CSS', 'JS']
-        callback('It did not go well', skills)
-    }, 2000)
+const doSomething = (callback) =>{
+   callbackz
 }
-
-const callback = (err, result) =>{
-    if(err){
-        return console.log(err)
+const callback = ((a, b) =>{
+    if(a > b){
+        return a
     }else{
-        return console.log(result)
+        return b
     }
-}
+})
 doSomething(callback)
-
 // In this case the err is false and it will return the else block which is the result.
 
 const doSomething2 = callback =>{
