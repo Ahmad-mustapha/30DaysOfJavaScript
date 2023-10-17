@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+</head>
+<body>
+    <button>Click me</button> <br>
+    <button id="btn2" onclick="ClickMeee()">Click ClickMeee</button> <br>
+    <button id="btn3">Click me twice</button> <br>
+    <button id="btn4">Mouse Enter</button> <br> <br> <br>
+
+    <!-- LETS BUILD AN APP THAT CALCULATE BMI -->
+    <input type="text" id="mass" placeholder="Enter weight">
+    <input type="text" id="height" placeholder="Enter height"> <br>
+    <button id="calBMI">Calculate BMI</button>
+    <p id="demo"></p> <br>
+
+
+    <input type="text" placeholder="Say Something" id="select">
+    <p id="inputPara"></p> <br> <br> <br>
+
+    <input type="text" id="blur" placeholder="Say something"> 
+    <p id="blurText"></p>
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click', function(e){
+            // alert('Hello World')
+        })
+        
+    </script>
+    <script src="DOMDay3.js">
+        
+    </script>
+</body>
+</html>
