@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('./img/galaxy.gif');
+    display: grid;
+    place-content: center;
+}
+h1{
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+}
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin: 2rem auto;
+}
+.inputs input, select, button{
+    padding: .3rem;
+    outline: none;
+    border: none;
+}
+.inputs button{
+    cursor: pointer;
+}
+main{
+    background-color: rgba(255, 255, 255, .2);
+    max-height: fit-content;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}

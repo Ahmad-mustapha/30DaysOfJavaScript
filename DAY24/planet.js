@@ -173,8 +173,21 @@ const calWeight = document.querySelector('.calWeight')
 
 selectPlanet.addEventListener('change', (e) =>{
     calWeight.addEventListener('click', (c)=>{
-        // console.log(c.target.value.planet)
-        let result = planetObject.find((p) => p.planet === e.target.value)
+        // console.log(typeof(e.target.value))
+         const result = planetObject.find(p =>{
+            return p.planet === e.target.value
+        })
+        console.log(result)       
+         // let result;
+    //    for(let i = 0; i < planetObject.length; i++){
+    //         if(planetObject[i] !== e.target.value) {
+    //             result = planetObject[i];
+    //             console.log(result); 
+    //         } else {
+    //             console.log('Not equals')
+    //         }
+    //         // break;
+    //    }
     })
 
 })
